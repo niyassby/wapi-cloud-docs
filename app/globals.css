@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #08100d;
+  color: #eaf0ea;
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+::selection {
+  background: rgba(51, 225, 127, 0.35);
+  color: #08100d;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1512;
+}
+::-webkit-scrollbar-thumb {
+  background: #243d33;
+  border-radius: 999px;
+  border: 2px solid #0b1512;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33564a;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(240, 247, 243, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.prose-doc h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f6f8f5;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 6rem;
+  letter-spacing: -0.01em;
+}
+.prose-doc h2:first-child {
+  margin-top: 0;
+}
+.prose-doc h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #f6f8f5;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  scroll-margin-top: 6rem;
+}
+.prose-doc p {
+  color: #c9d6cc;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.prose-doc ul {
+  color: #c9d6cc;
+  margin-bottom: 1.25rem;
+  margin-left: 1.1rem;
+  list-style: disc;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.prose-doc li {
+  margin-bottom: 0.35rem;
+}
+.prose-doc code:not(pre code) {
+  background: #122019;
+  border: 1px solid #1a2e26;
+  color: #8cf0b6;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.15em 0.4em;
+  border-radius: 0.35em;
+}
+.prose-doc a {
+  color: #33e17f;
+  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgba(51, 225, 127, 0.35);
+}
+.prose-doc a:hover {
+  text-decoration-color: #33e17f;
+}
+.prose-doc strong {
+  color: #f6f8f5;
+  font-weight: 600;
+}
