@@ -1,23 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import { DocsSidebarContent } from "./DocsSidebar";
 
-export function MobileDocsNav() {
-  const [open, setOpen] = useState(false);
-
+export function MobileDocsNav({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
   return (
     <div className="lg:hidden">
-      <button
-        onClick={() => setOpen(true)}
-        className="flex items-center gap-2 rounded-md border border-ink-700 px-3 py-1.5 font-mono text-xs text-paper-200"
-      >
-        <Menu className="h-3.5 w-3.5" /> menu
-      </button>
 
       {open && (
-        <div className="fixed inset-0 z-[60]">
+        <div className="fixed inset-0 z-[600]">
           <div
             className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm"
             onClick={() => setOpen(false)}
