@@ -1,19 +1,26 @@
-import { readdirSync, readFileSync, mkdirSync, writeFileSync } from "fs";
-import { join, relative as _relative, dirname, sep } from "path";
+import path, { relative as _relative, dirname, sep } from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 
-const ROOT = process.cwd();
-// const ROOT = path.resolve(import.meta.dirname, "..");
-const DOCS_DIR = join(ROOT, "app", "docs");
-const OUTPUT_DIR = join(ROOT, "public");
-const OUTPUT_FILE = join(OUTPUT_DIR, "search-index.json");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const ROOT = path.resolve(__dirname, "..");
+
+const DOCS_DIR = path.join(ROOT, "app", "docs");
+const OUTPUT_DIR = path.join(ROOT, "public");
+const OUTPUT_FILE = path.join(
+  OUTPUT_DIR,
+  "search-index.json"
+);
 
 function walk(dir) {
-  const entries = readdirSync(dir, { withFileTypes: true });
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   const files = [];
 
   for (const entry of entries) {
-    const fullPath = join(dir, entry.name);
+    const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
       files.push(...walk(fullPath));
@@ -218,7 +225,7 @@ function createIndex() {
   const files = walk(DOCS_DIR);
 
   const documents = files.map((filePath) => {
-    const source = readFileSync(filePath, "utf8");
+    const source = fs.readFileSync(filePath, "utf8");
 
     const title = extractPageTitle(source, filePath);
     const headings = extractHeadings(source);
@@ -239,9 +246,9 @@ function createIndex() {
     a.href.localeCompare(b.href)
   );
 
-  mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  writeFileSync(
+  fs.writeFileSync(
     OUTPUT_FILE,
     JSON.stringify(documents, null, 2),
     "utf8"

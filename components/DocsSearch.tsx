@@ -258,7 +258,7 @@ export function DocsSearch() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="hidden w-64 items-center justify-between rounded-lg border border-ink-700 bg-ink-900/70 px-3 py-2 text-left transition hover:border-ink-600 sm:flex"
+        className="hidden w-64 items-center justify-between rounded-md border border-ink-700 bg-ink-900/70 px-3 py-1 text-left transition hover:border-ink-600 sm:flex"
         aria-label="Search documentation"
       >
         <span className="flex items-center gap-2 text-xs text-paper-400">
@@ -276,7 +276,7 @@ export function DocsSearch() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-9 w-9 items-center justify-center rounded-lg border border-ink-700 text-paper-300 sm:hidden"
+        className="flex py-1.5 w-9 items-center justify-center rounded-lg border border-ink-700 text-paper-300 sm:hidden"
         aria-label="Search documentation"
       >
         <Search className="h-4 w-4" />

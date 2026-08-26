@@ -195,21 +195,18 @@ export default function Home() {
               — the untouched Graph API JSON — as an escape hatch.
             </p>
             <ul className="mt-6 space-y-3 text-sm text-paper-300">
-              <li className="flex gap-2.5">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+              <li className="">
                 Config-only failures (like a missing{" "}
                 <code className="text-signal-soft">businessAccountId</code>)
                 also come back as{" "}
                 <code className="text-signal-soft">{"{ data: null, error }"}</code>
                 , never a thrown exception.
               </li>
-              <li className="flex gap-2.5">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+              <li className="">
                 <code className="text-signal-soft">error.isRetryable</code>{" "}
                 tells you whether it&apos;s safe to retry the exact same call.
               </li>
-              <li className="flex gap-2.5">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+              <li className="">
                 <code className="text-signal-soft">error.fbtraceId</code> is
                 ready to hand to Meta support, no digging through logs.
               </li>
