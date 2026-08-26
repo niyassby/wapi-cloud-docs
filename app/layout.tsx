@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.css"; 
 
 export const metadata: Metadata = {
   title: "wapi-cloud — a Node.js SDK for the WhatsApp Cloud API",
+  icons: './wapi-cloud-icon.svg',
   description:
     "A promise-based, fully-typed Node.js wrapper for the WhatsApp Cloud API (Meta Graph API). Never throws, always resolves to { data, error }.",
   metadataBase: new URL("https://wapi-cloud.dev"),
