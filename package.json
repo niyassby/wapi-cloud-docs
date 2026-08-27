@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/generate-search-index.js && next dev",
-    "build": "node scripts/generate-search-index.js && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "script": "node scripts/generate-search-index.js"
   },
   "dependencies": {
     "clsx": "2.1.1",

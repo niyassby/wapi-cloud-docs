@@ -61,7 +61,7 @@ export function ParamTable({
   rows: { name: string; type: string; required?: boolean; description: string }[];
 }) {
   return (
-    <div className="my-6 overflow-hidden rounded-xl border border-ink-800">
+    <div className="my-6 overflow-auto rounded-xl border border-ink-800">
       <table className="w-full border-collapse text-left text-[13px]">
         <thead>
           <tr className="border-b border-ink-800 bg-ink-900/60">
@@ -85,10 +85,10 @@ export function ParamTable({
                   <span className="ml-1 text-amber-signal">*</span>
                 )}
               </td>
-              <td className="px-4 py-2.5 align-top font-mono text-paper-300">
+              <td className="px-4 py-2.5 align-top font-mono text-paper-300 text-nowrap">
                 {r.type}
               </td>
-              <td className="px-4 py-2.5 align-top text-paper-200">
+              <td className="px-4 py-2.5 align-top text-paper-200 min-w-[300px]">
                 {r.description}
               </td>
             </tr>
@@ -101,7 +101,7 @@ export function ParamTable({
 
 export function MethodSignature({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-lg border border-ink-800 bg-ink-900/60 px-4 py-3 font-mono text-[13px] text-paper-100">
+    <div className="my-4 rounded-lg overflow-auto border border-ink-800 bg-ink-900/60 px-4 py-3 font-mono text-[13px] text-paper-100">
       {children}
     </div>
   );

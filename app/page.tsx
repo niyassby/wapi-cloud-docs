@@ -15,6 +15,7 @@ import { DeliveryMock } from "@/components/DeliveryMock";
 import { CodeShowcase } from "@/components/CodeShowcase";
 import { CodeBlock } from "@/components/CodeBlock";
 import { modules } from "@/lib/modules";
+import CopyButton from "@/components/CopyButton";
 
 const features = [
   {
@@ -56,7 +57,7 @@ export default function Home() {
       <SiteNav />
 
       {/* HERO */}
-      <section className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 sm:pt-24 my-10">
+      <section className="relative mx-auto max-w-6xl px-6 pb-20 pt -8 sm:pt-24 my-10">
         <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-ink-700 bg-ink-900/60 px-3 py-1 font-mono text-[11px] text-signal">
@@ -66,14 +67,13 @@ export default function Home() {
             <h1 className="text-balance font-display text-4xl font-semibold leading-[1.08] tracking-tight text-paper-50 sm:text-6xl">
               WhatsApp messaging,
               <br />
-              without the{" "}
+              with {" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-signal">try/catch</span>
+                <span className="relative z-10 text-signal">wapi-cloud</span>
                 <span className="absolute inset-x-0 bottom-1 h-3 -skew-x-6 bg-signal-deep/70" />
               </span>
-              .
             </h1>
-            <p className="mt-6 max-w-lg text-balance text-lg leading-relaxed text-paper-300">
+            <p className="mt-6 max-w-lg text-balance md:text-lg leading-relaxed text-paper-300">
               <span className="font-mono text-paper-100">wapi-cloud</span> is a
               promise-based, fully-typed Node.js wrapper for the WhatsApp
               Cloud API. Every call resolves to{" "}
@@ -91,10 +91,7 @@ export default function Home() {
                 Read the docs
                 <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
-              <div className="flex items-center gap-2 rounded-lg border border-ink-700 bg-ink-900 px-4 py-3 font-mono text-sm text-paper-200">
-                <Terminal className="h-4 w-4 text-signal" />
-                npm install wapi-cloud
-              </div>
+              <CopyButton/>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs text-paper-300/70">

@@ -66,7 +66,7 @@ function highlightBash(code: string): string {
       if (line.trim().startsWith("#")) {
         return `<span class="text-paper-300/50">${esc(line)}</span>`;
       }
-      const m = line.match(/^(\s*)(npm|npx|node|export|curl)(\s.*)?$/);
+      const m = line.match(/^(\s*)(npm|yarn|pnpm|bun|npx|node|export|curl)(\s.*)?$/);
       if (!m) return esc(line);
       return `${m[1]}<span class="text-signal">${m[2]}</span>${esc(
         m[3] ?? ""
@@ -105,7 +105,7 @@ export function CodeBlock({
   return (
     <div
       className={clsx(
-        "group relative overflow-hidden rounded-xl border border-ink-700 bg-ink-900/80",
+        "group relative overflow-hidden rounded-xl border border-ink-700 bg-ink-900/80 mb-2",
         className
       )}
     >
